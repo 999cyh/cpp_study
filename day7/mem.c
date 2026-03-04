@@ -1,11 +1,12 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 #include "common.h"
 int main(int argc, char *argv[]) {
 	int *p = malloc(sizeof(int));
 	assert(p != NULL);
-	printf("(%d) memory address of p: %08x\n",getpid(),(unsigned) p);
+	printf("(%d) memory address of p: %p\n",getpid(),p);
 	* p = 0;
 	while (1) {
 		Spin(1);
